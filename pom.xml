@@ -12,6 +12,7 @@
 
 	<properties>
 		<java.version>1.7</java.version>
+		<jsoup.version>1.10.2</jsoup.version>
 	</properties>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -33,7 +34,12 @@
 			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-core</artifactId>
 		</dependency>
-
+		<!-- https://mvnrepository.com/artifact/org.jsoup/jsoup -->
+		<dependency>
+			<groupId>org.jsoup</groupId>
+			<artifactId>jsoup</artifactId>
+			<version>${jsoup.version}</version>
+		</dependency>
 
 	</dependencies>
 	<build>
