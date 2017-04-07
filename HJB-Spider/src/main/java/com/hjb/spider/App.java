@@ -59,7 +59,7 @@ public class App {
 					System.out.println("--------------------------------------");
 				}
 			} catch (Exception e) {
-				e.printStackTrace();
+				LOG.error("忽略异常，继续");
 			}
 		}
 	}
