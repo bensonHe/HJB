@@ -13,6 +13,7 @@
 	<properties>
 		<java.version>1.7</java.version>
 		<jsoup.version>1.10.2</jsoup.version>
+		<hjb.version>2017.02.24</hjb.version>
 	</properties>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -40,6 +41,8 @@
 			<artifactId>jsoup</artifactId>
 			<version>${jsoup.version}</version>
 		</dependency>
+
+
 
 	</dependencies>
 	<build>
