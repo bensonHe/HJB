@@ -2,7 +2,9 @@ package com.hjb.spider.resource;
 
 import java.io.IOException;
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.hjb.component.util.DateUtils;
@@ -18,13 +20,13 @@ import com.hjb.spider.db.HouseInfoDao;
 import com.hjb.spider.entity.HourseInfo;
 
 @Component
-public class Lianjia {
+public class LianjiaResource {
 	public static final Logger LOG = Logger.getLogger(App.class);
 	@Autowired
 	private HouseInfoDao houseInfoDao;
 
-	public void catchNew(int page) {
-
+	public List<HourseInfo> getNewPub(int page) {
+		List<HourseInfo> listHouser = new ArrayList<HourseInfo>();
 		Document doc = null;
 
 		try {
@@ -55,11 +57,13 @@ public class Lianjia {
 				Date now = DateUtils.getNow();
 				house.setCreateTime(now);
 				house.setUpdateTime(now);
-				houseInfoDao.insert(house);
+				listHouser.add(house);
+
 			}
 		} catch (IOException e) {
 			LOG.error("next ", e);
 		}
+		return listHouser;
 
 	}
 
