@@ -13,6 +13,7 @@ public class Start {
 	private LianjiaResource lianjia;
 
 	public void startUp() throws IOException {
+		lianjia.getNewPub(1);
 	}
 
 	public static void main(String[] args) throws IOException {

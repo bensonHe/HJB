@@ -1,6 +1,8 @@
 package com.hjb.spider.db;
 
-import org.hjb.component.util.DateUtils;
+import java.util.List;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -19,5 +21,19 @@ public class HouseInfoDao {
 						hourseInfo.getHuxing(), hourseInfo.getSize(), hourseInfo.getTurned(), hourseInfo.getRemark(),
 						hourseInfo.getLift(), hourseInfo.getImage(), hourseInfo.getHref(), hourseInfo.getCreateTime(),
 						hourseInfo.getUpdateTime() });
+	}
+
+	public List<Map<String, Object>> listAll() {
+		return jdbcTemplate.queryForList("select * from house_info");
+	}
+
+	public Map<String, Object> selectByHouseId(String houseId) {
+		List<Map<String, Object>> listData = jdbcTemplate.queryForList("select * from house_info where house_id=?",
+				new Object[] { houseId });
+		if (listData.isEmpty()) {
+			return null;
+		}
+		return listData.get(0);
+
 	}
 }
