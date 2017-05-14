@@ -1,12 +1,14 @@
 package com.hjb.spider.entity;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 public class HourseInfo {
 	private String hourseId;
 	private String title;
-	private String totalPrice;
-	private String unitPrice;
+	// 现在价格
+	private BigDecimal totalPrice;
+	private BigDecimal unitPrice;
 	private String position;
 	private String xiaoqu;
 	private String huxing;
@@ -18,6 +20,38 @@ public class HourseInfo {
 	private String href;
 	private Date createTime;
 	private Date updateTime;
+
+	// 第一次价格
+	private BigDecimal firstTotalPrice;
+
+	// 上一次价格
+	private BigDecimal lastTotalPrice;
+
+	private BigDecimal changePrice;
+
+	public BigDecimal getFirstTotalPrice() {
+		return firstTotalPrice;
+	}
+
+	public void setFirstTotalPrice(BigDecimal firstTotalPrice) {
+		this.firstTotalPrice = firstTotalPrice;
+	}
+
+	public BigDecimal getLastTotalPrice() {
+		return lastTotalPrice;
+	}
+
+	public void setLastTotalPrice(BigDecimal lastTotalPrice) {
+		this.lastTotalPrice = lastTotalPrice;
+	}
+
+	public BigDecimal getChangePrice() {
+		return changePrice;
+	}
+
+	public void setChangePrice(BigDecimal changePrice) {
+		this.changePrice = changePrice;
+	}
 
 	public Date getCreateTime() {
 		return createTime;
@@ -51,22 +85,6 @@ public class HourseInfo {
 		this.title = title;
 	}
 
-	public String getTotalPrice() {
-		return totalPrice;
-	}
-
-	public void setTotalPrice(String totalPrice) {
-		this.totalPrice = totalPrice;
-	}
-
-	public String getUnitPrice() {
-		return unitPrice;
-	}
-
-	public void setUnitPrice(String unitPrice) {
-		this.unitPrice = unitPrice;
-	}
-
 	public String getPosition() {
 		return position;
 	}
@@ -81,6 +99,22 @@ public class HourseInfo {
 
 	public void setXiaoqu(String xiaoqu) {
 		this.xiaoqu = xiaoqu;
+	}
+
+	public BigDecimal getTotalPrice() {
+		return totalPrice;
+	}
+
+	public void setTotalPrice(BigDecimal totalPrice) {
+		this.totalPrice = totalPrice;
+	}
+
+	public BigDecimal getUnitPrice() {
+		return unitPrice;
+	}
+
+	public void setUnitPrice(BigDecimal unitPrice) {
+		this.unitPrice = unitPrice;
 	}
 
 	public String getHuxing() {
