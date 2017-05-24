@@ -7,10 +7,10 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 import com.hjb.spider.resource.LianjiaResource;
-
-@Component
-@Configurable
-@EnableScheduling
+//
+//@Component
+//@Configurable
+//@EnableScheduling
 public class CatchNewTask {
 
 	@Autowired
